@@ -14,9 +14,17 @@ public class IKTarget
     public Transform hint;
     [Range(0f, 1f)] public float hintWeight = 0f;
 
+    [Header("Smoothing")]
+    public float smoothSpeed = 10f;
+
     [HideInInspector] public Vector3 lastPosition;
     [HideInInspector] public bool isLocked;
     [HideInInspector] public Vector3 lockedPosition;
+    [HideInInspector] public Vector3 smoothPosition;
+    [HideInInspector] public Quaternion smoothRotation;
+    [HideInInspector] public float currentPositionWeight;
+    [HideInInspector] public float currentRotationWeight;
+    [HideInInspector] public bool active;
 }
 
 public class CharacterIKController : MonoBehaviour
@@ -53,13 +61,43 @@ public class CharacterIKController : MonoBehaviour
 
     void Start()
     {
+        InitIK(leftHand);
+        InitIK(rightHand);
+        InitIK(leftFoot);
+        InitIK(rightFoot);
+
+        lastPelvisY = animator.bodyPosition.y;
         leftFootRot = Quaternion.identity;
         rightFootRot = Quaternion.identity;
+    }
+
+    void InitIK(IKTarget ik)
+    {
+        if (ik.target == null) return;
+
+        ik.smoothPosition = ik.target.position;
+        ik.smoothRotation = ik.target.rotation;
+
+        ik.currentPositionWeight = ik.active ? ik.positionWeight : 0f;
+        ik.currentRotationWeight = ik.active ? ik.rotationWeight : 0f;
+
+        ik.lastPosition = ik.target.position;
+        ik.lockedPosition = ik.target.position;
     }
 
     void OnAnimatorIK(int layerIndex)
     {
         if (!animator) return;
+
+        SmoothIK(leftHand);
+        SmoothIK(rightHand);
+        SmoothIK(leftFoot);
+        SmoothIK(rightFoot);
+
+        SmoothWeight(leftHand);
+        SmoothWeight(rightHand);
+        SmoothWeight(leftFoot);
+        SmoothWeight(rightFoot);
 
         if (enableFootGrounding)
         {
@@ -75,6 +113,43 @@ public class CharacterIKController : MonoBehaviour
         ApplyIK(AvatarIKGoal.RightFoot, rightFoot);
     }
 
+    void SmoothIK(IKTarget ik)
+    {
+        if (ik == null || ik.target == null) return;
+
+        float t = Time.deltaTime * ik.smoothSpeed;
+
+        ik.smoothPosition = Vector3.Lerp(
+            ik.smoothPosition,
+            ik.target.position,
+            t
+        );
+
+        ik.smoothRotation = Quaternion.Slerp(
+            ik.smoothRotation,
+            ik.target.rotation,
+            t
+        );
+    }
+
+    void SmoothWeight(IKTarget ik)
+    {
+        float targetWeight = ik.active ? ik.positionWeight : 0f;
+
+        ik.currentPositionWeight = Mathf.Lerp(
+            ik.currentPositionWeight,
+            targetWeight,
+            Time.deltaTime * ik.smoothSpeed
+        );
+
+        ik.currentRotationWeight = Mathf.Lerp(
+            ik.currentRotationWeight,
+            targetWeight,
+            Time.deltaTime * ik.smoothSpeed
+        );
+    }
+
+    // not tested
     void UpdateFoot(AvatarIKGoal goal, IKTarget ik, ref Quaternion footRot)
     {
         if (ik == null || ik.target == null) return;
@@ -96,6 +171,7 @@ public class CharacterIKController : MonoBehaviour
 
             if (ik.isLocked) targetPos = ik.lockedPosition;
             else ik.lockedPosition = targetPos;
+
             ik.lastPosition = targetPos;
 
             Quaternion targetRot = Quaternion.LookRotation(
@@ -103,7 +179,11 @@ public class CharacterIKController : MonoBehaviour
                 hit.normal
             );
 
-            footRot = Quaternion.Slerp(footRot, targetRot, Time.deltaTime * footRotationSpeed);
+            footRot = Quaternion.Slerp(
+                footRot,
+                targetRot,
+                Time.deltaTime * footRotationSpeed
+            );
 
             ik.target.position = targetPos;
             ik.target.rotation = footRot;
@@ -120,11 +200,16 @@ public class CharacterIKController : MonoBehaviour
         float lowest = Mathf.Min(leftOffset, rightOffset);
 
         Vector3 pelvisPos = animator.bodyPosition;
+
         float targetY = pelvisPos.y + lowest + pelvisOffset;
 
-        float newY = Mathf.Lerp(lastPelvisY, targetY, Time.deltaTime * pelvisSpeed);
-        pelvisPos.y = newY;
+        float newY = Mathf.Lerp(
+            pelvisPos.y,
+            targetY,
+            Time.deltaTime * pelvisSpeed
+        );
 
+        pelvisPos.y = newY;
         animator.bodyPosition = pelvisPos;
 
         lastPelvisY = newY;
@@ -140,11 +225,11 @@ public class CharacterIKController : MonoBehaviour
             return;
         }
 
-        animator.SetIKPositionWeight(goal, ik.positionWeight);
-        animator.SetIKRotationWeight(goal, ik.rotationWeight);
+        animator.SetIKPositionWeight(goal, ik.currentPositionWeight);
+        animator.SetIKRotationWeight(goal, ik.currentRotationWeight);
 
-        animator.SetIKPosition(goal, ik.target.position);
-        animator.SetIKRotation(goal, ik.target.rotation);
+        animator.SetIKPosition(goal, ik.smoothPosition);
+        animator.SetIKRotation(goal, ik.smoothRotation);
 
         if (ik.hint != null && ik.hintWeight > 0f)
         {
@@ -171,4 +256,23 @@ public class CharacterIKController : MonoBehaviour
     {
         animator.SetIKHintPositionWeight(GetHintType(goal), weight);
     }
+
+    // target controls
+    public void SetLeftFootTarget(Transform target) => leftFoot.target = target;
+    public void SetRightFootTarget(Transform target) => rightFoot.target = target;
+    public void SetLeftHandTarget(Transform target) => leftHand.target = target;
+    public void SetRightHandTarget(Transform target) => rightHand.target = target;
+
+    // weight controls
+    public void LeftHand_On() => leftHand.active = true;
+    public void LeftHand_Off() => leftHand.active = false;
+
+    public void RightHand_On() => rightHand.active = true;
+    public void RightHand_Off() => rightHand.active = false;
+
+    public void LeftFoot_On() => leftFoot.active = true;
+    public void LeftFoot_Off() => leftFoot.active = false;
+
+    public void RightFoot_On() => rightFoot.active = true;
+    public void RightFoot_Off() => rightFoot.active = false;
 }

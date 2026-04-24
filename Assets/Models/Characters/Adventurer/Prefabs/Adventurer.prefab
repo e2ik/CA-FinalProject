@@ -486,6 +486,7 @@ Transform:
   - {fileID: 3602011673249502143}
   - {fileID: 654011537389093957}
   - {fileID: 5494782395319170981}
+  - {fileID: 8428185969295455425}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4862260952599282269
@@ -936,6 +937,55 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &9027246755003805861
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8428185969295455425}
+  - component: {fileID: 2509911751480047978}
+  m_Layer: 0
+  m_Name: IKSignalReceiver
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8428185969295455425
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9027246755003805861}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.4943, y: 0, z: -0.92092}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8073086772555192299}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2509911751480047978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9027246755003805861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a72721a8483031742b8e5bf357c8f05f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::IKSignalReceiver
+  ik: {fileID: 4733156307131891971}
+  rightHandTargets: []
+  leftHandTargets: []
+  rightFootTargets: []
+  leftFootTargets: []
 --- !u!1001 &8376547063095439152
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1132,9 +1182,12 @@ MonoBehaviour:
     rotationWeight: 1
     hint: {fileID: 5494782395319170981}
     hintWeight: 0
+    smoothSpeed: 10
     lastPosition: {x: 0, y: 0, z: 0}
     isLocked: 0
     lockedPosition: {x: 0, y: 0, z: 0}
+    smoothPosition: {x: 0, y: 0, z: 0}
+    smoothRotation: {x: 0, y: 0, z: 0, w: 0}
   rightHand:
     enabled: 1
     target: {fileID: 2096397609494848852}
@@ -1142,9 +1195,12 @@ MonoBehaviour:
     rotationWeight: 1
     hint: {fileID: 654011537389093957}
     hintWeight: 0
+    smoothSpeed: 10
     lastPosition: {x: 0, y: 0, z: 0}
     isLocked: 0
     lockedPosition: {x: 0, y: 0, z: 0}
+    smoothPosition: {x: 0, y: 0, z: 0}
+    smoothRotation: {x: 0, y: 0, z: 0, w: 0}
   leftFoot:
     enabled: 1
     target: {fileID: 4153296505385375593}
@@ -1152,9 +1208,12 @@ MonoBehaviour:
     rotationWeight: 1
     hint: {fileID: 5494782395319170981}
     hintWeight: 0
+    smoothSpeed: 10
     lastPosition: {x: 0, y: 0, z: 0}
     isLocked: 0
     lockedPosition: {x: 0, y: 0, z: 0}
+    smoothPosition: {x: 0, y: 0, z: 0}
+    smoothRotation: {x: 0, y: 0, z: 0, w: 0}
   rightFoot:
     enabled: 1
     target: {fileID: 4840476329152593511}
@@ -1162,9 +1221,12 @@ MonoBehaviour:
     rotationWeight: 1
     hint: {fileID: 3093117526216218954}
     hintWeight: 0
+    smoothSpeed: 10
     lastPosition: {x: 0, y: 0, z: 0}
     isLocked: 0
     lockedPosition: {x: 0, y: 0, z: 0}
+    smoothPosition: {x: 0, y: 0, z: 0}
+    smoothRotation: {x: 0, y: 0, z: 0, w: 0}
   enableFootGrounding: 0
   groundLayer:
     serializedVersion: 2
