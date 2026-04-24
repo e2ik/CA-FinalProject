@@ -49,9 +49,20 @@ public class CharacterIKController : MonoBehaviour
     public float pelvisOffset = 0f;
     public float pelvisSpeed = 5f;
 
+    [Header("LookAt")]
+    public bool enableLookAt = true;
+    public Transform lookAtTarget;
+
+    [Range(0f, 1f)] public float lookAtWeight = 1f;
+    public float lookAtSmoothSpeed = 8f;
+    [HideInInspector] public float currentLookAtWeight;
+
+    private Vector3 smoothLookAtPosition;
+
     private Animator animator;
 
     private float lastPelvisY;
+    private bool initialized = false;
     private Quaternion leftFootRot, rightFootRot;
 
     void Awake()
@@ -65,10 +76,15 @@ public class CharacterIKController : MonoBehaviour
         InitIK(rightHand);
         InitIK(leftFoot);
         InitIK(rightFoot);
-
-        lastPelvisY = animator.bodyPosition.y;
+        currentLookAtWeight = 0f;
         leftFootRot = Quaternion.identity;
         rightFootRot = Quaternion.identity;
+
+        if (lookAtTarget != null)
+        {
+            Transform head = animator.GetBoneTransform(HumanBodyBones.Head);
+            smoothLookAtPosition = head != null ? head.position : transform.position;
+        }
     }
 
     void InitIK(IKTarget ik)
@@ -88,6 +104,20 @@ public class CharacterIKController : MonoBehaviour
     void OnAnimatorIK(int layerIndex)
     {
         if (!animator) return;
+
+        if (!initialized)
+        {
+            lastPelvisY = animator.bodyPosition.y;
+            initialized = true;
+        }   
+
+        SmoothLookAt();
+        if (lookAtTarget != null)
+        {
+            animator.SetLookAtWeight(currentLookAtWeight);
+            animator.SetLookAtPosition(smoothLookAtPosition);
+        }
+        else animator.SetLookAtWeight(0f);
 
         SmoothIK(leftHand);
         SmoothIK(rightHand);
@@ -190,6 +220,26 @@ public class CharacterIKController : MonoBehaviour
         }
     }
 
+    void SmoothLookAt()
+    {
+        float target = (enableLookAt && lookAtTarget != null) ? lookAtWeight : 0f;
+
+        currentLookAtWeight = Mathf.Lerp(
+            currentLookAtWeight,
+            target,
+            Time.deltaTime * lookAtSmoothSpeed
+        );
+
+        if (lookAtTarget != null)
+        {
+            smoothLookAtPosition = Vector3.Lerp(
+                smoothLookAtPosition,
+                lookAtTarget.position,
+                Time.deltaTime * lookAtSmoothSpeed
+            );
+        }
+    }
+
     void AdjustPelvisHeight()
     {
         if (leftFoot.target == null || rightFoot.target == null) return;
@@ -263,7 +313,21 @@ public class CharacterIKController : MonoBehaviour
     public void SetLeftHandTarget(Transform target) => leftHand.target = target;
     public void SetRightHandTarget(Transform target) => rightHand.target = target;
 
+    public void SetLookAtTarget(Transform target)
+    {
+        if (target != null && lookAtTarget == null)
+        {
+            Transform head = animator.GetBoneTransform(HumanBodyBones.Head);
+            smoothLookAtPosition = head != null ? head.position : transform.position;
+        }
+
+        lookAtTarget = target;
+    }
+
     // weight controls
+    public void LookAt_On() => enableLookAt = true;
+    public void LookAt_Off() => enableLookAt = false;
+
     public void LeftHand_On() => leftHand.active = true;
     public void LeftHand_Off() => leftHand.active = false;
 

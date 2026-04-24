@@ -17,10 +17,14 @@ public class IKSignalReceiver : MonoBehaviour
     [Header("Left Foot Targets")]
     public Transform[] leftFootTargets;
 
+    [Header("Look At Target")]
+    public Transform[] lookAtTarget;
+
     private int rightHandIndex;
     private int leftHandIndex;
     private int rightFootIndex;
     private int leftFootIndex;
+    private int lookAtIndex;
 
     void ApplyLimb(Transform[] targets, int index, Action<Transform> setter)
     {
@@ -33,6 +37,25 @@ public class IKSignalReceiver : MonoBehaviour
 
     // Note: Don't know a way around this but just make sure there's not more targets
     //       than what is coded here.
+
+    // Look At Signal
+    public void LookAt_Set_0()
+    {
+        lookAtIndex = 0;
+        ApplyLimb(lookAtTarget, lookAtIndex, ik.SetLookAtTarget);
+    }
+
+    public void LookAt_Set_1()
+    {
+        lookAtIndex = 1;
+        ApplyLimb(lookAtTarget, lookAtIndex, ik.SetLookAtTarget);
+    }
+
+    public void LookAt_Set_2()
+    {
+        lookAtIndex = 2;
+        ApplyLimb(lookAtTarget, lookAtIndex, ik.SetLookAtTarget);
+    }
 
     // right Hand Signal
     public void RightHand_Set_0()
@@ -99,6 +122,9 @@ public class IKSignalReceiver : MonoBehaviour
     }
 
     // weight control signals
+    public void LookAt_On()     => ik.LookAt_On();
+    public void LookAt_Off()    => ik.LookAt_Off();
+
     public void RightHand_On()  => ik.RightHand_On();
     public void RightHand_Off() => ik.RightHand_Off();
 
