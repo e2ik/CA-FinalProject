@@ -793,12 +793,20 @@ PrefabInstance:
       value: Adventurer
       objectReference: {fileID: 0}
     - target: {fileID: 4733156307131891971, guid: 64b182395c0b6744a920c74bce3ece13, type: 3}
+      propertyPath: lookAtWeight
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4733156307131891971, guid: 64b182395c0b6744a920c74bce3ece13, type: 3}
       propertyPath: leftFoot.enabled
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4733156307131891971, guid: 64b182395c0b6744a920c74bce3ece13, type: 3}
       propertyPath: leftHand.enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4733156307131891971, guid: 64b182395c0b6744a920c74bce3ece13, type: 3}
+      propertyPath: lookAtSmoothSpeed
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4733156307131891971, guid: 64b182395c0b6744a920c74bce3ece13, type: 3}
       propertyPath: rightFoot.enabled
