@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 5371f6abd487af64f8d4378a7a1512d9
+guid: 5c3944896f3c8fc4eb9c629408d985aa
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
@@ -83,37 +83,7 @@ ModelImporter:
   humanDescription:
     serializedVersion: 3
     human: []
-    skeleton:
-    - name: cultist v3(Clone)
-      parentName: 
-      position: {x: 0, y: 0, z: 0}
-      rotation: {x: 0, y: 0, z: 0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: Body
-      parentName: cultist v3(Clone)
-      position: {x: -0, y: 4.6629753, z: 0}
-      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-      scale: {x: 335.34436, y: 318.06113, z: 426.90277}
-    - name: Head
-      parentName: cultist v3(Clone)
-      position: {x: -0, y: 9.688037, z: 0}
-      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-      scale: {x: 108.81928, y: 100, z: 128.98595}
-    - name: Helm
-      parentName: cultist v3(Clone)
-      position: {x: -0.012674801, y: 10.109486, z: 0.021128155}
-      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-      scale: {x: 130.28702, y: 128.76604, z: 141.36371}
-    - name: Left Arm
-      parentName: cultist v3(Clone)
-      position: {x: -3.8625877, y: 7.3332496, z: 0.08209621}
-      rotation: {x: 0.70097375, y: 0.030064804, z: 0.7121239, w: -0.024729675}
-      scale: {x: 22.049768, y: 52.437782, z: 40.90872}
-    - name: Right Arm
-      parentName: cultist v3(Clone)
-      position: {x: 4.0373917, y: 7.3332496, z: 0.08209621}
-      rotation: {x: 0.024727691, y: 0.71212393, z: -0.030062785, w: 0.7009738}
-      scale: {x: -22.049679, y: -50.656467, z: -40.480217}
+    skeleton: []
     armTwist: 0.5
     foreArmTwist: 0.5
     upperLegTwist: 0.5
