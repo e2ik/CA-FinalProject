@@ -1,4 +1,6 @@
 ﻿<Solution>
   <Project Path="Assembly-CSharp.csproj" />
+  <Project Path="VolumetricCloudsURP.csproj" />
+  <Project Path="VolumetricCloudsURP.Editor.csproj" />
   <Project Path="Assembly-CSharp-Editor.csproj" />
 </Solution>
