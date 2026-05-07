@@ -3,7 +3,12 @@ guid: d27b3c1e95085fc4fadac1f5297c5c8d
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Leaves_Pine
+    second: {fileID: 2100000, guid: c07bf34cc88b23e4c8548eea138c8858, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -56,9 +61,9 @@ ModelImporter:
     maxBonesPerVertex: 4
     minBoneWeight: 0.001
     optimizeBones: 1
-    generateMeshLods: 0
-    meshLodGenerationFlags: 0
-    maximumMeshLod: -1
+    generateMeshLods: 1
+    meshLodGenerationFlags: 1
+    maximumMeshLod: 32
     meshOptimizationFlags: -1
     indexFormat: 0
     secondaryUVAngleDistortion: 8
