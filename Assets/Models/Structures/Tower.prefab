@@ -4443,6 +4443,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 176c0a4f28fe935459e2bd45ea017a64, type: 3}
+      propertyPath: 'm_Materials.Array.data[2]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 33fb04b6b8c03f0499d4bde2d45f2992, type: 2}
     - target: {fileID: 919132149155446097, guid: 176c0a4f28fe935459e2bd45ea017a64, type: 3}
       propertyPath: m_Name
       value: Roof_Tower_RoundTiles

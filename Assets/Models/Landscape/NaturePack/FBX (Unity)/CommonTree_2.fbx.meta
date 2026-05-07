@@ -3,7 +3,12 @@ guid: d56c25564740f6448a781993df1d3ed8
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Leaves_NormalTree
+    second: {fileID: 2100000, guid: 0c41865103bd0b74f9bffd0557fa1a15, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -56,8 +61,8 @@ ModelImporter:
     maxBonesPerVertex: 4
     minBoneWeight: 0.001
     optimizeBones: 1
-    generateMeshLods: 0
-    meshLodGenerationFlags: 0
+    generateMeshLods: 1
+    meshLodGenerationFlags: 1
     maximumMeshLod: -1
     meshOptimizationFlags: -1
     indexFormat: 0
