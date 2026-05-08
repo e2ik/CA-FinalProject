@@ -3,7 +3,12 @@ guid: ab17ae42180d3814aa63aff0a6892386
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Grass
+    second: {fileID: 2100000, guid: ccf9bc98f1ad7064bbe9bfd01ab9895b, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -56,7 +61,7 @@ ModelImporter:
     maxBonesPerVertex: 4
     minBoneWeight: 0.001
     optimizeBones: 1
-    generateMeshLods: 0
+    generateMeshLods: 1
     meshLodGenerationFlags: 0
     maximumMeshLod: -1
     meshOptimizationFlags: -1
