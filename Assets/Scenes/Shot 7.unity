@@ -7195,6 +7195,7 @@ Transform:
   - {fileID: 813692755}
   - {fileID: 82856474}
   - {fileID: 867457304}
+  - {fileID: 1187463675}
   - {fileID: 1071424512}
   - {fileID: 1166161839}
   - {fileID: 1495186485}
@@ -9543,7 +9544,7 @@ Transform:
   m_GameObject: {fileID: 1071424508}
   serializedVersion: 2
   m_LocalRotation: {x: 0.13723895, y: -0.011045398, z: 0.0015304361, w: 0.99047524}
-  m_LocalPosition: {x: 0.4196393, y: 4.7500033, z: -26.464783}
+  m_LocalPosition: {x: 2.25925, y: 4.75, z: 0.8978796}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10428,7 +10429,7 @@ Transform:
   m_GameObject: {fileID: 1166161838}
   serializedVersion: 2
   m_LocalRotation: {x: 0.016659806, y: -1.8923758e-11, z: 5.339208e-13, w: 0.99986124}
-  m_LocalPosition: {x: 0.4196393, y: 4.8000035, z: -22.964783}
+  m_LocalPosition: {x: 2.25925, y: 4.8, z: 4.3978796}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10711,6 +10712,81 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1186096659}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1187463674
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1187463675}
+  - component: {fileID: 1187463676}
+  m_Layer: 0
+  m_Name: Camera Cross
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1187463675
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1187463674}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.09290414, y: 0.8850091, z: 0.20186673, w: -0.409118}
+  m_LocalPosition: {x: 3.1157372, y: 1.2423685, z: -47.008247}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 793119981}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1187463676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1187463674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9dfa5b682dcd46bda6128250e975f58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineCamera
+  Priority:
+    Enabled: 0
+    m_Value: 0
+  OutputChannel: 1
+  StandbyUpdate: 2
+  m_StreamingVersion: 20241001
+  m_LegacyPriority: 0
+  Target:
+    TrackingTarget: {fileID: 0}
+    LookAtTarget: {fileID: 0}
+    CustomLookAtTarget: 0
+  Lens:
+    FieldOfView: 60.000004
+    OrthographicSize: 5
+    NearClipPlane: 0.3
+    FarClipPlane: 1000
+    Dutch: 0
+    ModeOverride: 0
+    PhysicalProperties:
+      GateFit: 2
+      SensorSize: {x: 21.946, y: 16.002}
+      LensShift: {x: 0, y: 0}
+      FocusDistance: 10
+      Iso: 200
+      ShutterSpeed: 0.005
+      Aperture: 16
+      BladeCount: 5
+      Curvature: {x: 2, y: 11}
+      BarrelClipping: 0.25
+      Anamorphism: 0
+  BlendHint: 0
 --- !u!1 &1190515085
 GameObject:
   m_ObjectHideFlags: 0
@@ -13224,7 +13300,7 @@ Transform:
   m_GameObject: {fileID: 1495186484}
   serializedVersion: 2
   m_LocalRotation: {x: 0.011109112, y: 6.29983e-12, z: -1.6349255e-13, w: 0.9999383}
-  m_LocalPosition: {x: 0.4196393, y: 4.8000035, z: -23.714783}
+  m_LocalPosition: {x: 2.25925, y: 4.8, z: 3.6478796}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -13679,6 +13755,7 @@ PlayableDirector:
     - d2a5c78221167e6448dc036518e6dccf: {fileID: 1166161842}
     - eb676673b6929cb4c9035449fd9623e3: {fileID: 1495186488}
     - ce55a96fe1de95f47a15edca97647920: {fileID: 813692754}
+    - 7a712a068946fe74c90497e87440c9a7: {fileID: 1187463676}
     - a377761963b9ec54bbf4ed069e8e29ba: {fileID: 1166161842}
     - e625845f643757d4eb07a1c17a7c8ad8: {fileID: 867457303}
     - ddd5a6be74a45ea4f90229dd30fab768: {fileID: 230065366}
