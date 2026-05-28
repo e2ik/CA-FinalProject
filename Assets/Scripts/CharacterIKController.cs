@@ -167,8 +167,8 @@ public class CharacterIKController : MonoBehaviour
         }
         else
         {
-            SmoothFootFromBone(leftFoot,  leftFootBone);
-            SmoothFootFromBone(rightFoot, rightFootBone);
+            SmoothIK(leftFoot);
+            SmoothIK(rightFoot);
         }
 
         ApplyIK(AvatarIKGoal.LeftHand,  leftHand);
