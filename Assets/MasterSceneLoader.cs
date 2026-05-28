@@ -11,6 +11,6 @@ public class MasterSceneLoader : MonoBehaviour
 
     private IEnumerator LoadFirstScene()
     {
-        yield return SceneManager.LoadSceneAsync(0, LoadSceneMode.Additive);
+        yield return SceneManager.LoadSceneAsync(1, LoadSceneMode.Additive);
     }
 }
