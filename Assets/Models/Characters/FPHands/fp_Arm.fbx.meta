@@ -3,7 +3,17 @@ guid: c6aeab76080c1354a87a7e150de17c0a
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: basicRig_Skin
+    second: {fileID: 2100000, guid: 8e27e36fcb7389a44a69d8bc884b446f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: basicRig_Skin.001
+    second: {fileID: 2100000, guid: 3e5a79d4d2892324ca61902110f359fd, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

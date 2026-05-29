@@ -95,32 +95,6 @@ public class IKSignalReceiver : MonoBehaviour
         ApplyLimb(leftHandTargets, leftHandIndex, ik.SetLeftHandTarget);
     }
 
-    // right Foot Signal
-    public void RightFoot_Set_0()
-    {
-        rightFootIndex = 0;
-        ApplyLimb(rightFootTargets, rightFootIndex, ik.SetRightFootTarget);
-    }
-
-    public void RightFoot_Set_1()
-    {
-        rightFootIndex = 1;
-        ApplyLimb(rightFootTargets, rightFootIndex, ik.SetRightFootTarget);
-    }
-
-    // left Foot Signal
-    public void LeftFoot_Set_0()
-    {
-        leftFootIndex = 0;
-        ApplyLimb(leftFootTargets, leftFootIndex, ik.SetLeftFootTarget);
-    }
-
-    public void LeftFoot_Set_1()
-    {
-        leftFootIndex = 1;
-        ApplyLimb(leftFootTargets, leftFootIndex, ik.SetLeftFootTarget);
-    }
-
     // weight control signals
     public void LookAt_On()     => ik.LookAt_On();
     public void LookAt_Off()    => ik.LookAt_Off();

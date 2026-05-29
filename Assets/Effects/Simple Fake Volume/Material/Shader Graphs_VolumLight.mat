@@ -12,8 +12,7 @@ Material:
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
-  m_InvalidKeywords:
-  - _EMISSION
+  m_InvalidKeywords: []
   m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -55,14 +54,14 @@ Material:
     - _Edg: 0.5
     - _Emission: 0
     - _Metalic: 0
-    - _Opacity: 0.16
+    - _Opacity: 0.05
     - _Power: 2.35
     - _QueueControl: 0
     - _QueueOffset: 0
     - _Smoothness: 0
     - _Texture: 0
     m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 0.039215688}
+    - _Color: {r: 1, g: 0.7964582, b: 0, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
 --- !u!114 &6656787299696832730
