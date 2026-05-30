@@ -130,11 +130,6 @@ public class CharacterIKController : MonoBehaviour
     {
         Vector3 origin = leftFootBone.position + Vector3.up * 0.5f;
         bool hit = Physics.Raycast(origin, Vector3.down, out RaycastHit hitInfo, raycastDistance, groundLayer);
-        Debug.Log($"LeftFoot bone pos: {leftFootBone.position} | Ray origin: {origin} | Hit: {hit} | Hit point: {(hit ? hitInfo.point.ToString() : "none")} | Layer mask: {groundLayer.value}");
-    }
-    else
-    {
-        Debug.Log("leftFootBone is NULL");
     }
 
         if (!initialized)

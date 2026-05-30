@@ -30,14 +30,8 @@ public class Windmill : MonoBehaviour
     private void Update()
     {
         float dt = useUnscaledTime ? Time.unscaledDeltaTime : Time.deltaTime;
-
-        // Smoothly move toward new random speed
         currentSpeed = Mathf.Lerp(currentSpeed, targetSpeed, speedLerpSpeed * dt);
-
-        // Rotate object
         transform.Rotate(rotationAxis.normalized * currentSpeed * dt);
-
-        // Count down to next random speed change
         changeTimer -= dt;
 
         if (changeTimer <= 0f)
