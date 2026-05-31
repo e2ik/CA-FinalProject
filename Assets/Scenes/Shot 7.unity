@@ -2948,7 +2948,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 104231481}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.006911721, y: -0.6319459, z: 0.0056361966, w: 0.77496123}
+  m_LocalRotation: {x: 0.006911722, y: -0.63194597, z: 0.0056361984, w: 0.7749612}
   m_LocalPosition: {x: 8.43925, y: 5.22, z: 4.4378796}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -7846,6 +7846,135 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!1 &488616667
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 488616668}
+  - component: {fileID: 488616669}
+  m_Layer: 0
+  m_Name: Drum
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &488616668
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 488616667}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -3.46704, y: -6.17941, z: -64.27137}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2102220936}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &488616669
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 488616667}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: cfe466a147a319d4fbdca5b5557587fa, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.2
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!4 &493141366 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4235566955999968, guid: ea4fb55d0227e604386f44f905cfe7c0, type: 3}
@@ -15339,7 +15468,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1071424508}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.008753065, y: -0.03059062, z: 0.0002678973, w: 0.99949366}
+  m_LocalRotation: {x: 0.008805128, y: -0.030587312, z: 0.00026946113, w: 0.9994933}
   m_LocalPosition: {x: 2.25925, y: 5, z: 3.8978796}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -17066,8 +17195,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1166161838}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.02081979, y: -3.1933026e-11, z: -1.7863464e-12, w: 0.9997833}
-  m_LocalPosition: {x: 2.2587028, y: 5.0033894, z: -0.1098423}
+  m_LocalRotation: {x: 0.020855492, y: 0.00000034798336, z: -0.0000000072589437, w: 0.99978256}
+  m_LocalPosition: {x: 2.25925, y: 5, z: -0.1021204}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -18944,57 +19073,57 @@ MonoBehaviour:
       TangentIn:
         x: -0
         y: -0
-        z: -1.152598
+        z: -1.2832842
       TangentOut:
         x: 0
         y: 0
-        z: 1.152598
+        z: 1.2832842
       Rotation:
         value:
-          x: 6.7141764e-10
-          y: 0.9992193
-          z: -2.6546348e-11
-          w: -0.039506894
+          x: 6.7183364e-10
+          y: 0.99994475
+          z: 7.068381e-12
+          w: 0.010520447
     - Position:
-        x: -1.5313878
+        x: -0.35138798
         y: 0
-        z: -16.012793
+        z: -17.352793
       TangentIn:
         x: -0
         y: -0
-        z: -2.957872
+        z: -3.3765292
       TangentOut:
         x: 0
         y: 0
-        z: 2.2267702
+        z: 2.7386045
       Rotation:
         value:
-          x: -0.000000022468942
-          y: 0.96396315
-          z: 0.0000000062010113
-          w: -0.2660359
+          x: -0.000000022655609
+          y: 0.97237635
+          z: 0.0000000054384706
+          w: -0.23341855
     - Position:
-        x: -7.021388
+        x: -7.2833877
         y: 0
-        z: -19.552792
+        z: -22.170792
       TangentIn:
         x: -0
         y: -0
-        z: -1.7767885
+        z: -2.163704
       TangentOut:
         x: 0
         y: 0
-        z: 1.3664962
+        z: 1.7703459
       Rotation:
         value:
-          x: 0.000000031108886
-          y: 0.7805107
-          z: -0.000000024916359
-          w: -0.62514246
+          x: 0.000000029013496
+          y: 0.7282967
+          z: -0.000000027299102
+          w: -0.6852619
     - Position:
-        x: -10.851388
+        x: -12.281387
         y: 0
-        z: -19.042791
+        z: -19.532791
       TangentIn:
         x: -0.6068275
         y: 0.00000047683716
@@ -19016,17 +19145,17 @@ MonoBehaviour:
       TangentIn:
         x: -0
         y: -0
-        z: -0.45528996
+        z: -0.57386136
       TangentOut:
         x: 0
         y: 0
-        z: 0.45528996
+        z: 0.57386136
       Rotation:
         value:
-          x: -0.050191008
-          y: 0.22958532
-          z: -0.20759046
-          w: 0.949567
+          x: -0.06899373
+          y: 0.3157119
+          z: -0.20203988
+          w: 0.9245246
     m_MetaData:
     - Mode: 0
       Tension: 0.5
@@ -21315,8 +21444,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1495186484}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.011109112, y: -8.792155e-12, z: 5.7968875e-13, w: 0.9999383}
-  m_LocalPosition: {x: 2.2600625, y: 4.8012977, z: 3.644271}
+  m_LocalRotation: {x: 0.011109112, y: -8.859178e-11, z: 9.942066e-13, w: 0.9999383}
+  m_LocalPosition: {x: 2.25925, y: 4.8, z: 3.6478796}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -21971,6 +22100,8 @@ PlayableDirector:
     value: {fileID: 1605929831}
   - key: {fileID: -8480001627580413494, guid: 81d4fd4dbc13f2a4eacc1fd632063570, type: 2}
     value: {fileID: 670891911}
+  - key: {fileID: 1634087330952615663, guid: 81d4fd4dbc13f2a4eacc1fd632063570, type: 2}
+    value: {fileID: 488616667}
   m_ExposedReferences:
     m_References:
     - c31ff05c5682b374eb734164080d95ed: {fileID: 1571987877}
@@ -30459,6 +30590,7 @@ Transform:
   - {fileID: 1967507093}
   - {fileID: 670891912}
   - {fileID: 117195176}
+  - {fileID: 488616668}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &2104907973 stripped
