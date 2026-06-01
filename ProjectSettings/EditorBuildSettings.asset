@@ -20,6 +20,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Shot 7.unity
     guid: e4238efbabbf9124898544a0d0117b4e
+  - enabled: 1
+    path: Assets/Scenes/Shot 8/Shot 8.unity
+    guid: 153bd5e8d9762aa4fa72a4f2ed71fb3c
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
