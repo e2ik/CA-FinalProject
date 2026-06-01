@@ -4,6 +4,8 @@ using System;
 public class IKSignalReceiver : MonoBehaviour
 {
     public CharacterIKController ik;
+    public DemonController demonDC;
+    public DemonController wingDC;
 
     [Header("Right Hand Targets")]
     public Transform[] rightHandTargets;
@@ -93,6 +95,18 @@ public class IKSignalReceiver : MonoBehaviour
     {
         leftHandIndex = 2;
         ApplyLimb(leftHandTargets, leftHandIndex, ik.SetLeftHandTarget);
+    }
+
+    public void HasRisenTrue()
+    {
+        demonDC.HasRisenTrue();
+        wingDC.HasRisenTrue();
+    }
+
+    public void HasRisenFalse()
+    {
+        demonDC.HasRisenFalse();
+        wingDC.HasRisenFalse();
     }
 
     // weight control signals

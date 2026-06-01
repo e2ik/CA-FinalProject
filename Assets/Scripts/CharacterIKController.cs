@@ -73,32 +73,38 @@ public class CharacterIKController : MonoBehaviour
 
     void Start()
     {
-        leftFootBone  = animator.GetBoneTransform(HumanBodyBones.LeftFoot);
-        rightFootBone = animator.GetBoneTransform(HumanBodyBones.RightFoot);
-
-        if (leftFootBone == null)  Debug.LogWarning("CharacterIKController: Could not find LeftFoot bone. Is this a Humanoid rig?");
-        if (rightFootBone == null) Debug.LogWarning("CharacterIKController: Could not find RightFoot bone. Is this a Humanoid rig?");
-
-        InitFootIK(leftFoot,  leftFootBone);
-        InitFootIK(rightFoot, rightFootBone);
-
-        InitIK(leftHand);
-        InitIK(rightHand);
-
-        currentLookAtWeight = 0f;
-        leftFootRot  = Quaternion.identity;
-        rightFootRot = Quaternion.identity;
-
-        if (lookAtTarget != null)
         {
-            Transform head = animator.GetBoneTransform(HumanBodyBones.Head);
-            smoothLookAtPosition = head != null ? head.position : transform.position;
+            leftFootBone = animator.GetBoneTransform(HumanBodyBones.LeftFoot);
+            rightFootBone = animator.GetBoneTransform(HumanBodyBones.RightFoot);
+
+            if (leftFootBone == null)
+                Debug.LogWarning("CharacterIKController: Could not find LeftFoot bone. Is this a Humanoid rig?");
+            if (rightFootBone == null)
+                Debug.LogWarning("CharacterIKController: Could not find RightFoot bone. Is this a Humanoid rig?");
+
+            InitFootIK(leftFoot, leftFootBone);
+            InitFootIK(rightFoot, rightFootBone);
+
+            InitIK(leftHand);
+            InitIK(rightHand);
+
+            currentLookAtWeight = 0f;
+            leftFootRot = Quaternion.identity;
+            rightFootRot = Quaternion.identity;
+
+            if (lookAtTarget != null)
+            {
+                Transform head = animator.GetBoneTransform(HumanBodyBones.Head);
+                smoothLookAtPosition = head != null ? head.position : transform.position;
+            }
         }
     }
 
     void InitIK(IKTarget ik)
     {
         if (ik.target == null) return;
+        
+        ik.active = true;
 
         ik.active          = ik.enabled;
         ik.smoothPosition  = ik.target.position;
